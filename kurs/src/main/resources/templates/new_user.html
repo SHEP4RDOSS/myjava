@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>New User</title>
+</head>
+<body>
+<form th:action="@{/adm/new_user}" th:object="${user}" method="post">
+    <p>Login: <input type="text" th:field="*{username}"/></p>
+    <p>Password: <input type="text" th:field="*{password}"/></p>
+    <p>Name: <input type="text" th:field="*{name}"/></p>
+    <p>Surname: <input type="text" th:field="*{surname}"/></p>
+    <input th:each="String : ${role}" th:value="${String}" type="radio" th:text="${String}"
+           th:field="*{roles}">
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
