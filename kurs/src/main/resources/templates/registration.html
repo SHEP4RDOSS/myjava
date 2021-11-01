@@ -3,15 +3,110 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+    <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.28741" type="text/javascript"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+    <style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+    <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.28741" />
+    <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.28741" />
+
 </head>
 <body>
-<form th:action="@{/registration}" th:object="${user}" method="post">
-    <p>Login: <input type="text" th:field="*{username}"/></p>
-    <p>Password: <input type="text" th:field="*{password}"/></p>
-    <p>Name: <input type="text" th:field="*{name}"/></p>
-    <p>Surname: <input type="text" th:field="*{surname}"/></p>
 
-    <input type="submit" value="Submit"/>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li  class="nav-item active">
+                <form th:action="@{/logout}" method="post">
+                    <input value="Log out" type="submit" class="btn btn-success"/>
+                </form>
+            </li>
+            <li class="nav-item active">
+                <button type="button" class="btn btn-success"><a th:href="@{/Start}">Create resume</a></button>
+            </li>
+            <li class="nav-item active">
+                <button type="button" class="btn btn-success"> <a th:href="@{/registration}">Register</a></button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+JotForm.extendsNewTheme = false;
+JotForm.newPaymentUIForNewCreatedForms = true;
+JotForm.newPaymentUI = true;
+JotForm.clearFieldOnHide="disable";
+JotForm.submitError="jumpToFirstError";
+
+JotForm.prepareCalculationsOnTheFly([null,{"name":"input1","qid":"1","text":"                             Авторизация","type":"control_head"},{"name":"submit2","qid":"2","text":"Отправить","type":"control_button"},null,{"description":"","name":"input4","qid":"4","text":"Имя","type":"control_fullname"},null,{"description":"","name":"input6","qid":"6","subLabel":"example@example.com","text":"Логин","type":"control_email"},{"description":"","name":"input7","qid":"7","subLabel":"","text":"Пароль","type":"control_textbox"}]);
+setTimeout(function() {
+    JotForm.paymentExtrasOnTheFly([null,{"name":"input1","qid":"1","text":"                             Авторизация","type":"control_head"},{"name":"submit2","qid":"2","text":"Отправить","type":"control_button"},null,{"description":"","name":"input4","qid":"4","text":"Имя","type":"control_fullname"},null,{"description":"","name":"input6","qid":"6","subLabel":"example@example.com","text":"Логин","type":"control_email"},{"description":"","name":"input7","qid":"7","subLabel":"","text":"Пароль","type":"control_textbox"}]);}, 20);
+</script>
+<form th:action="@{/registration}" th:object="${user}" method="post" class="jotform-form" action="https://submit.jotformeu.com/submit/213000873658050/" name="form_213000873658050" id="213000873658050" accept-charset="utf-8" autocomplete="on">
+    <input type="hidden" name="formID" value="213000873658050" />
+    <input type="hidden" id="JWTContainer" value="" />
+    <input type="hidden" id="cardinalOrderNumber" value="" />
+    <div role="main" class="form-all">
+        <style>
+            .form-all:before { background: none;}
+        </style>
+        <ul class="form-section page-section">
+            <li id="cid_1" class="form-input-wide" data-type="control_head">
+                <div class="form-header-group  header-large">
+                    <div class="header-text httal htvam">
+                        <h1 id="header_1" class="form-header" data-component="header">
+
+                            Authorization
+                        </h1>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line" data-type="control_fullname" id="id_4">
+                <label class="form-label form-label-top form-label-auto" id="label_4" for="first_4"> Имя </label>
+                <div id="cid_4" class="form-input-wide" data-layout="full">
+                    <div data-wrapper-react="true">
+            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+              <input th:field="*{name}" type="text" id="first_4" name="q4_input4[first]" class="form-textbox" data-defaultvalue="" size="10" value="" data-component="first" aria-labelledby="label_4 sublabel_4_first" />
+              <label class="form-sub-label" for="first_4" id="sublabel_4_first" style="min-height:13px" aria-hidden="false"> Name </label>
+            </span>
+                        <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+              <input th:field="*{surname}" type="text" id="last_4" name="q4_input4[last]" class="form-textbox" data-defaultvalue="" size="15" value="" data-component="last" aria-labelledby="label_4 sublabel_4_last" />
+              <label class="form-sub-label" for="last_4" id="sublabel_4_last" style="min-height:13px" aria-hidden="false"> Surname </label>
+            </span>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line" data-type="control_email" id="id_6">
+                <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6"> Login </label>
+                <div id="cid_6" class="form-input-wide" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input th:field="*{username}" type="email" id="input_6" name="q6_input6" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_6 sublabel_input_6" />
+            <label class="form-sub-label" for="input_6" id="sublabel_input_6" style="min-height:13px" aria-hidden="false"> example@example.com </label>
+          </span>
+                </div>
+            </li>
+            <li class="form-line" data-type="control_textbox" id="id_7">
+                <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7"> Password </label>
+                <div id="cid_7" class="form-input-wide" data-layout="half">
+                    <input th:field="*{password}" type="text" id="input_7" name="q7_input7" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_7" />
+                </div>
+            </li>
+            <li class="form-line" data-type="control_button" id="id_2">
+                <div id="cid_2" class="form-input-wide" data-layout="full">
+                    <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                        <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+                           Send
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </form>
+
+<script type="text/javascript">JotForm.forwardToEu=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.28741"></script>
+<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.28741"></script>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Title</title>
+
+
+    <style>
+        img{
+            width:200px;
+            height: 200px;
+        }
+        .nameDiv{
+            border: #555555 solid 3px;
+            text-align: center;
+        }
+        .leftDiv{
+            font-size: 25px;
+            width:30%;
+            height: 800px;
+            margin:0;
+            padding:0;
+            border: black solid 1px;
+            float: left;
+            background-color: #6f6f6f;
+        }
+        .mainDiv{
+            margin-right: 15%;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="nameDiv">
+        <h2 th:text="${resume.getFirstname()+' '+resume.getLastname()}"/>
+        <h4 th:text="${resume.occupation}" />
+    </div>
+    <div class="leftDiv clearfix">
+        <h3>Контактные данные</h3>
+        <img th:if="${resume.getPhoto() != null}" th:attr="src=${resume.getPhoto}"/>
+        <p style="font-weight: bold" >EMAIL:</p>
+        <p th:text="${resume.getEmail()}"/>
+        <p style="font-weight: bold" >Phone:</p>
+        <p th:text="${resume.getPhone()}"/>
+        <p style="font-weight: bold" >Links:</p>
+        <p th:if="${resume.getArrLinks() == null}">None</p>
+        <ul th:each="link : ${resume.getArrLinks()}">
+            <li th:text="${link}" />
+        </ul>
+    </div>
+    <div class="mainDiv">
+
+        <span th:if="${resume.getAbout()!=null}">
+            <p th:text="'About me: '+${resume.getAbout()}" />
+        </span>
+        <span th:if="${resume.getCity()!=null}">
+            <p th:text="'Place of residence: '+${resume.getCountry()} + ' , '+${resume.getCity()} + ' , ' + ${resume.getStreet()}" />
+        </span>
+        <span th:if="${resume.getSallary()!=null}">
+            <p th:text="'Desired Salary: '+${resume.getSallary()}" />
+        </span>
+        <span th:if="${resume.getDateOfBirth()!=null}">
+            <p th:text="'Date of birth: '+${resume.getDateOfBirth()}" />
+        </span>
+        <p style="font-weight: bold" >WORK EXPERIENCE</p>
+        <p th:if="${resume.getArrExp() == null}">None</p>
+        <ul th:each="exp : ${resume.getArrExp()}">
+            <li th:text="${exp}" />
+        </ul>
+
+        <p style="font-weight: bold" >RECOMMENDATIONS</p>
+        <p th:if="${resume.getArrrRcomends() == null}">None</p>
+        <ul th:each="rec : ${resume.getArrrRcomends()}">
+            <li th:text="${rec}" />
+        </ul>
+
+        <p style="font-weight: bold" >EDUCATION</p>
+        <p th:if="${resume.getArrEducation() == null}">None</p>
+        <ul th:each="edu : ${resume.getArrEducation()}">
+            <li th:text="${edu}" />
+        </ul>
+
+        <p style="font-weight: bold" >ADDITIONAL INFORMATION</p>
+        <p th:if="${resume.getArrAddInfo() == null}">None</p>
+        <ul th:each="info : ${resume.getArrAddInfo()}">
+            <li th:text="${info}" />
+        </ul>
+    </div>
+</div>
+</body>
+</html>

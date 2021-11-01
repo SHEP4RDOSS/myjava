@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn03.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+  <script src="https://cdn01.jotfor.ms/static/jotform.forms.js?3.3.28741" type="text/javascript"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+  <script src="https://cdn02.jotfor.ms/js/vendor/imageinfo.js?v=3.3.28741" type="text/javascript"></script>
+  <script src="https://cdn03.jotfor.ms/file-uploader/fileuploader.js?v=3.3.28741"></script>
+  <link href="https://cdn01.jotfor.ms/static/formCss.css?3.3.28741" rel="stylesheet" type="text/css" />
+  <style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+  <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/nova.css?3.3.28741" />
+  <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/themes/CSS/54b929a4700cc4f2408b4567.css?themeRevisionID=60eb6ecddb71c14295405e83"/>
+  <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_styles.css?3.3.28741" />
+  <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_feature.css?3.3.28741" />
+  <style type="text/css">
+    @import 'https://shots.jotform.com/elton/genericTheme.css';
+
+    .form-label-left{
+      width:150px;
+    }
+    .form-line{
+      padding-top:12px;
+      padding-bottom:12px;
+    }
+    .form-label-right{
+      width:150px;
+    }
+    .form-all{
+      width:550px;
+      color:#555 !important;
+      font-family:'Didact Gothic';
+      font-size:18px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li  class="nav-item active">
+        <form th:action="@{/logout}" method="post">
+          <input value="Log out" type="submit" class="btn btn-success"/>
+        </form>
+      </li>
+      <li class="nav-item active">
+        <button type="button" class="btn btn-success"><a th:href="@{/Start}">Create resume</a></button>
+      </li>
+      <li class="nav-item active">
+        <button type="button" class="btn btn-success"> <a th:href="@{/registration}">Register</a></button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<script src="https://cdn03.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/static/jotform.forms.js?3.3.28746" type="text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+<script src="https://cdn02.jotfor.ms/js/vendor/imageinfo.js?v=3.3.28746" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/file-uploader/fileuploader.js?v=3.3.28746"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = false;
+JotForm.extendsNewTheme = false;
+JotForm.newPaymentUIForNewCreatedForms = true;
+JotForm.newPaymentUI = true;
+JotForm.clearFieldOnHide="disable";
+JotForm.submitError="jumpToFirstError";
+
+JotForm.init(function(){
+  /*INIT-START*/
+  if (window.JotForm && JotForm.accessible) $('input_4').setAttribute('tabindex',0);
+  if (window.JotForm && JotForm.accessible) $('input_5').setAttribute('tabindex',0);
+  if (window.JotForm && JotForm.accessible) $('input_10').setAttribute('tabindex',0);
+  if (window.JotForm && JotForm.accessible) $('input_17').setAttribute('tabindex',0);
+  JotForm.setCustomHint( 'input_17', '\u0441\u0441\u044b\u043b\u043a\u0430 1; \u0441\u0441\u044b\u043b\u043a\u0430 2;....' );
+  JotForm.alterTexts({"ageVerificationError":"Вы должны быть старше, чем {minAge} лет для отправки данной формы.","alphabetic":"Это поле может содержать только буквы","alphanumeric":"Это поле может содержать только буквы и цифры","appointmentSelected":"Вы выбрали {time} на {date}","ccDonationMinLimitError":"Минимальная сумма {minAmount} {currency}","ccInvalidCVC":"CVC номер неверен.","ccInvalidExpireDate":"Срок действия неверен.","ccInvalidNumber":"Неверный номер карты","ccMissingDetails":"Please fill up the credit card details.","ccMissingDonation":"Пожалуйста, введите числовое значение суммы.","ccMissingProduct":"Пожалуйста, выберите хотя бы один продукт.","characterLimitError":"Слишком много символов. Лимит","characterMinLimitError":"Слишком мало символов. Минимум","confirmClearForm":"Вы уверены, что хотите очистить форму?","confirmEmail":"E-mail не совпадает","currency":"Это поле может содержать только значения валюты.","cyrillic":"Это поле может содержать только кириллицу","dateInvalid":"Эта дата недопустима. Формат даты {format}","dateInvalidSeparate":"Эта дата недопустима. Введите верный {element}.","dateLimited":"Дата недоступна.","disallowDecimals":"Пожалуйста, введите целое число.","dragAndDropFilesHere_infoMessage":"Перетащите файлы сюда","email":"Введите корректный e-mail адрес","fillMask":"Значение поля должно заполнить маску ввода поля.","freeEmailError":"Бесплатные email адреса не разрешаются","generalError":"Есть незаполненные поля. Пожалуйста, заполните их, прежде чем продолжить.","generalPageError":"На этой странице есть ошибка. Исправьте её прежде чем продолжить.","gradingScoreError":"Общее значение должно быть только меньше или равно","incompleteFields":"Это поле обязательно надо заполнить. Пожалуйста сделайте это.","inputCarretErrorA":"Вводимое значение не должно быть меньше, чем минимальное значение:","inputCarretErrorB":"Вводимое значение не должно быть больше, чем максимальное значение:","justSoldOut":"Только что Распродано","lessThan":"Ваша оценка должна быть меньше или равна","maxDigitsError":"Максимально разрешенное количество цифр","maxFileSize_infoMessage":"Макс. размер файла","maxSelectionsError":"The maximum number of selections allowed is ","minSelectionsError":"Минимально требуемое значение выбора","multipleFileUploads_emptyError":"{file} пустой, выберите файлы еще раз, без этого файла.","multipleFileUploads_fileLimitError":"Разрешена загрузка только {fileLimit} файлов.","multipleFileUploads_minSizeError":"{file} слишком маленький, минимальный размер файла {minSizeLimit}.","multipleFileUploads_onLeave":"Файлы загружаются, если вы покинете форму сейчас, загрузка будет отменена.","multipleFileUploads_sizeError":"{file} слишком большой, максимальный размер файла {sizeLimit}.","multipleFileUploads_typeError":"{file} имеет недопустимое расширение. Только {extensions} разрешены.","multipleFileUploads_uploadFailed":"File upload failed, please remove it and upload the file again.","noSlotsAvailable":"Нет доступных сессий","notEnoughStock":"Товаров на складе недостаточно для текущего выбора","notEnoughStock_remainedItems":"Товаров на складе недостаточно для текущего выбора. Осталось ({count} товаров)","noUploadExtensions":"File has no extension file type (e.g. .txt, .png, .jpeg)","numeric":"Это поле может содержать только цифры","pastDatesDisallowed":"Дата не должна быть в прошлом.","pleaseWait":"Пожалуйста подождите...","required":"Это поле обязательно к заполнению.","requireEveryCell":"Каждая ячейка обязательна для заполнения.","requireEveryRow":"Каждая строка обязательна для заполнения.","requireOne":"Хотя бы одно поле необходимо заполнить.","restrictedDomain":"This domain is not allowed","selectionSoldOut":"Выбранный Продукт Распродан","slotUnavailable":"Слот на {time} {date} уже занят. Пожалуйста, выберите другой слот.","soldOut":"Распродано","subProductItemsLeft":"({count} продуктов осталось)","uploadExtensions":"Вы можете загружать только следующие файлы:","uploadFilesize":"Размер файла не должен превышать:","uploadFilesizemin":"размер файла не может быть меньше:","url":"Это поле может содержать только действительный URL","validateEmail":"You need to validate this e-mail","wordLimitError":"Слишком много слов. Лимит","wordMinLimitError":"Слишком мало слов. Минимум"});
+  setTimeout(function() {
+    JotForm.initMultipleUploads();
+  }, 2);
+  /*INIT-END*/
+});
+
+JotForm.prepareCalculationsOnTheFly([null,{"name":"heading","qid":"1","text":"Форма","type":"control_head"},{"name":"submit2","qid":"2","text":"Отправить","type":"control_button"},null,{"description":"","name":"input4","qid":"4","subLabel":"","text":"Имя","type":"control_textbox"},{"description":"","name":"input5","qid":"5","subLabel":"","text":"Фамилия","type":"control_textbox"},null,null,{"description":"","name":"email","qid":"8","subLabel":"example@example.com","text":"Email","type":"control_email"},null,{"description":"","name":"input10","qid":"10","subLabel":"","text":"Номер телефона","type":"control_textbox"},{"description":"","name":"input11","qid":"11","text":"Адрес","type":"control_address"},null,null,null,{"description":"","name":"input15","qid":"15","subLabel":"","text":"","type":"control_fileupload"},null,{"description":"","name":"input17","qid":"17","subLabel":"","text":"Ссылки для связи","type":"control_textarea"}]);
+setTimeout(function() {
+  JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Форма","type":"control_head"},{"name":"submit2","qid":"2","text":"Отправить","type":"control_button"},null,{"description":"","name":"input4","qid":"4","subLabel":"","text":"Имя","type":"control_textbox"},{"description":"","name":"input5","qid":"5","subLabel":"","text":"Фамилия","type":"control_textbox"},null,null,{"description":"","name":"email","qid":"8","subLabel":"example@example.com","text":"Email","type":"control_email"},null,{"description":"","name":"input10","qid":"10","subLabel":"","text":"Номер телефона","type":"control_textbox"},{"description":"","name":"input11","qid":"11","text":"Адрес","type":"control_address"},null,null,null,{"description":"","name":"input15","qid":"15","subLabel":"","text":"","type":"control_fileupload"},null,{"description":"","name":"input17","qid":"17","subLabel":"","text":"Ссылки для связи","type":"control_textarea"}]);}, 20);
+</script>
+<link href="https://cdn01.jotfor.ms/static/formCss.css?3.3.28746" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/nova.css?3.3.28746" />
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/themes/CSS/54b929a4700cc4f2408b4567.css?themeRevisionID=60eb6ecddb71c14295405e83"/>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_styles.css?3.3.28746" />
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_feature.css?3.3.28746" />
+<style type="text/css">
+  @import 'https://shots.jotform.com/elton/genericTheme.css';
+
+  .form-label-left{
+    width:150px;
+  }
+  .form-line{
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+  .form-label-right{
+    width:150px;
+  }
+  .form-all{
+    width:550px;
+    color:#555 !important;
+    font-family:'Didact Gothic';
+    font-size:18px;
+  }
+</style>
+
+<style type="text/css" id="form-designer-style">
+  /* Injected CSS Code */
+  /*PREFERENCES STYLE*/
+  .form-all {
+    font-family: Didact Gothic, sans-serif;
+  }
+  .form-all .qq-upload-button,
+  .form-all .form-submit-button,
+  .form-all .form-submit-reset,
+  .form-all .form-submit-print {
+    font-family: Didact Gothic, sans-serif;
+  }
+  .form-all .form-pagebreak-back-container,
+  .form-all .form-pagebreak-next-container {
+    font-family: Didact Gothic, sans-serif;
+  }
+  .form-header-group {
+    font-family: Didact Gothic, sans-serif;
+  }
+  .form-label {
+    font-family: Didact Gothic, sans-serif;
+  }
+
+  .form-label.form-label-auto {
+
+    display: inline-block;
+    float: left;
+    text-align: left;
+
+  }
+
+  .form-line {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .form-all {
+    max-width: 550px;
+    width: 100%;
+  }
+
+  .form-label.form-label-left,
+  .form-label.form-label-right,
+  .form-label.form-label-left.form-label-auto,
+  .form-label.form-label-right.form-label-auto {
+    width: 150px;
+  }
+
+  .form-all {
+    font-size: 18px
+  }
+  .form-all .qq-upload-button,
+  .form-all .qq-upload-button,
+  .form-all .form-submit-button,
+  .form-all .form-submit-reset,
+  .form-all .form-submit-print {
+    font-size: 18px
+  }
+  .form-all .form-pagebreak-back-container,
+  .form-all .form-pagebreak-next-container {
+    font-size: 18px
+  }
+
+  .supernova .form-all, .form-all {
+    background-color: #fff;
+  }
+
+  .form-all {
+    color: #555;
+  }
+  .form-header-group .form-header {
+    color: rgb(255, 255, 255);
+  }
+  .form-header-group .form-subHeader {
+    color: #555;
+  }
+  .form-label-top,
+  .form-label-left,
+  .form-label-right,
+  .form-html,
+  .form-checkbox-item label,
+  .form-radio-item label {
+    color: #555;
+  }
+  .form-sub-label {
+    color: #6f6f6f;
+  }
+
+  .supernova {
+    background-color: #ecedf3;
+  }
+  .supernova body {
+    background: transparent;
+  }
+
+  .form-textbox,
+  .form-textarea,
+  .form-dropdown,
+  .form-radio-other-input,
+  .form-checkbox-other-input,
+  .form-captcha input,
+  .form-spinner input {
+  }
+
+  .supernova {
+    background-image: none;
+  }
+  #stage {
+    background-image: none;
+  }
+
+  .form-all {
+    background-image: none;
+  }
+
+  .ie-8 .form-all:before { display: none; }
+  .ie-8 {
+    margin-top: auto;
+    margin-top: initial;
+  }
+
+  /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
+  /* Injected CSS Code */
+</style>
+<style>
+  #input_17
+  {
+    font-family: "Courier New";
+  }
+  input
+  {
+    font-family: "Courier New";
+  }
+</style>
+<form th:object="${resume}"  th:action="baseInfo" class="jotform-form"  method="post" enctype="multipart/form-data" name="form_213036403321035" id="213036403321035" accept-charset="utf-8" autocomplete="on">
+  <input type="hidden" name="formID" value="213036403321035" />
+  <input type="hidden" id="JWTContainer" value="" />
+  <input type="hidden" id="cardinalOrderNumber" value="" />
+  <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-default">
+          <div class="header-text httal htvam">
+            <h2 id="header_1" class="form-header" data-component="header">
+              Base info
+            </h2>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_4">
+        <label class="form-label form-label-left form-label-auto" id="label_4" for="input_4">
+          Name
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_4" class="form-input jf-required">
+          <input th:field="${resume.firstname}" type="text" id="input_4" name="q4_input4" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" size="20" value="" data-component="textbox" aria-labelledby="label_4" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_5">
+        <label class="form-label form-label-left form-label-auto" id="label_5" for="input_5">
+          Surname
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_5" class="form-input jf-required">
+          <input th:field="${resume.lastname}" type="text" id="input_5" name="q5_input5" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" size="20" value="" data-component="textbox" aria-labelledby="label_5" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email" id="id_8">
+        <label class="form-label form-label-left form-label-auto" id="label_8" for="input_8">
+          Email
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_8" class="form-input jf-required">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input th:field="${resume.email}" type="email" id="input_8" name="q8_email" class="form-textbox validate[required, Email]" data-defaultvalue="" size="30" value="" data-component="email" aria-labelledby="label_8 sublabel_input_8" required="" />
+            <label class="form-sub-label" for="input_8" id="sublabel_input_8" style="min-height:13px" aria-hidden="false"> example@example.com </label>
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_textbox" id="id_10">
+        <label class="form-label form-label-left form-label-auto" id="label_10" for="input_10"> Phone number </label>
+        <div id="cid_10" class="form-input">
+          <input th:field="${resume.phone}" type="text" id="input_10" name="q10_input10" data-type="input-textbox" class="form-textbox validate[Fill Mask]" data-defaultvalue="" size="20" value="" data-component="textbox" aria-labelledby="label_10" />
+        </div>
+      </li>
+      <li class="form-line" data-type="control_address" id="id_11" data-compound-hint=",,,,,">
+        <label class="form-label form-label-left form-label-auto" id="label_11" for="input_11_addr_line1"> Address </label>
+        <div id="cid_11" class="form-input">
+          <div summary="" class="form-address-table jsTest-addressField">
+            <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+              <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                <span class="form-sub-label-container" style="vertical-align:top">
+                  <input th:field="${resume.street}" type="text" id="input_11_addr_line1" name="q11_input11[addr_line1]" class="form-textbox form-address-line" data-defaultvalue="" value="" data-component="address_line_1" aria-labelledby="label_11 sublabel_11_addr_line1" required="" />
+                  <label class="form-sub-label" for="input_11_addr_line1" id="sublabel_11_addr_line1" style="min-height:13px" aria-hidden="false"> Street </label>
+                </span>
+              </span>
+            </div>
+            <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+              <span class="form-address-line form-address-city-line jsTest-address-lineField ">
+                <span class="form-sub-label-container" style="vertical-align:top">
+                  <input th:field="${resume.city}" type="text" id="input_11_city" name="q11_input11[city]" class="form-textbox form-address-city" data-defaultvalue="" value="" data-component="city" aria-labelledby="label_11 sublabel_11_city" required="" />
+                  <label class="form-sub-label" for="input_11_city" id="sublabel_11_city" style="min-height:13px" aria-hidden="false"> City </label>
+                </span>
+              </span>
+              <span class="form-address-line form-address-state-line jsTest-address-lineField ">
+                <span class="form-sub-label-container" style="vertical-align:top">
+                  <input th:field="${resume.country}" type="text" id="input_11_state" name="q11_input11[state]" class="form-textbox form-address-state" data-defaultvalue="" value="" data-component="state" aria-labelledby="label_11 sublabel_11_state" required="" />
+                  <label class="form-sub-label" for="input_11_state" id="sublabel_11_state" style="min-height:13px" aria-hidden="false"> Country </label>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_textarea" id="id_17">
+        <label class="form-label form-label-left form-label-auto" id="label_17" for="input_17"> Links </label>
+        <div id="cid_17" class="form-input">
+          <input th:field="${resume.links}" id="input_17" class="form-textarea" name="q17_input17" cols="40" rows="6" data-component="textarea" aria-labelledby="label_17"></textarea>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_2">
+        <div id="cid_2" class="form-input-wide">
+          <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+            <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+              Send
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>
+</body>
+</html>
+
+
+
+
