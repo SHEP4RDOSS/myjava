@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/map"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="Map"
+                android:text="Map" />
+
+            <Button
+                android:id="@+id/list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="List"
+                android:text="List" />
+        </TableRow>
+        <FrameLayout
+            android:id="@+id/mapFr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
+        <FrameLayout
+            android:id="@+id/listFr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
+    </TableLayout>
+
+</LinearLayout>
+
+
